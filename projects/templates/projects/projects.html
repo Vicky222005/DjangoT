@@ -10,7 +10,7 @@
 </p>
 <footer>
     {% for project in projects %}
-    <a href="/project/{{project.id}}">{{project.title}}</a><br>
+    <a href="{% url 'project' project.id %}">{{project.title}}</a><br>
     {% endfor %}
 </footer>
 {% endblock %}

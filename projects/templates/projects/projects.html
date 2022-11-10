@@ -3,14 +3,26 @@
 {% block content %}
 {{message}}
 <h1>Projects Template</h1>
-<p>Hello Hi
-    qdqq
-    qq
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Project</th>
+        <th>Votes</th>
+        <th>Vote Ratio</th>
+        <th></th>
+    </tr>
+    {% for project in projects %}
+    <tr>
+        <td>{{project.id}}</td>
+        <td>{{project.title}}</td>
+        <td>{{project.vote_total}}</td>
+        <td>{{project.vote_ratio}}%</td>
+        <td>{{project.created}}</td>
+        <td><a href="{% url 'project' project.id %}">View</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<p>
     {{projects.title}}
 </p>
-<footer>
-    {% for project in projects %}
-    <a href="{% url 'project' project.id %}">{{project.title}}</a><br>
-    {% endfor %}
-</footer>
 {% endblock %}

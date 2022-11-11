@@ -1,10 +1,15 @@
-{{% extends 'main.html' %}}
+{% extends 'main.html' %}
 {% block content %}
 
 <h1>Project Form</h1>
 
 <form method="POST">
-
+    {% csrf_token %}
+    
+    {% for field in form %}
+        <div style="margin:10px;">{{field.label}}
+        {{field}}</div>
+    {% endfor %}
     <input type="submit">
 </form>
 

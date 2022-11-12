@@ -3,13 +3,10 @@
 
 <h1>Project Form</h1>
 
-<form method="POST">
+<form action="" method="POST">
     {% csrf_token %}
     
-    {% for field in form %}
-        <div style="margin:10px;">{{field.label}}
-        {{field}}</div>
-    {% endfor %}
+    {{form.as_p}}
     <input type="submit">
 </form>
 

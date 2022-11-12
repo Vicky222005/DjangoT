@@ -5,20 +5,21 @@
 <h1>Projects Template</h1>
 <table>
     <tr>
-        <th>ID</th>
         <th>Project</th>
         <th>Votes</th>
         <th>Vote Ratio</th>
         <th></th>
+        <th></th>
     </tr>
     {% for project in projects %}
     <tr>
-        <td>{{project.id}}</td>
         <td>{{project.title}}</td>
         <td>{{project.vote_total}}</td>
         <td>{{project.vote_ratio}}%</td>
         <td>{{project.created}}</td>
         <td><a href="{% url 'project' project.id %}">View</a></td>
+        <td><a href="{% url 'update-project' project.id %}">Edit</a></td>
+        <td><a href="{% url 'delete-project' project.id %}">DELETE</a></td>
     </tr>
     {% endfor %}
 </table>

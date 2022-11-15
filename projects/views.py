@@ -11,8 +11,7 @@ def projects(request):
 
 def project(request, pk):
     projectOBJ = Project.objects.get(id=pk)
-    tags = projectOBJ.tags.all()
-    return render(request, 'projects/single-projects.html',{'projectOBJ':projectOBJ,'tags':tags})
+    return render(request, 'projects/single-projects.html',{'projectOBJ':projectOBJ})
 
 def createProject(request):
     form = ProjectForm()
